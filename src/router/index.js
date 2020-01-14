@@ -1,23 +1,53 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Connexion from "../views/Connexion"
+import Accueil from "../views/Accueil"
+import Inscription from "../views/Inscription"
+import Playlist from "../views/Playlist"
+import Video from "../views/Video"
+import UpdatePlaylist from "../views/UpdatePlaylist";
+import AjoutVideo from "../views/AjoutVideo";
+
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'connexion',
+    component: Connexion
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/accueil',
+    name: 'accueil',
+    component: Accueil
+  },
+  {
+    path: '/inscription',
+    name: 'inscription',
+    component: Inscription
+  },
+  {
+    path: '/playlist',
+    name: 'playlist',
+    component: Playlist
+  },
+  {
+    path: '/video',
+    name: 'video',
+    component: Video
+  },
+  {
+    path: '/update',
+    name: 'update',
+    component: UpdatePlaylist
+  },
+  {
+    path: '/addvideo',
+    name: 'addvideo',
+    component: AjoutVideo
   }
+
 ]
 
 const router = new VueRouter({
