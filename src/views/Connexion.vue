@@ -39,7 +39,7 @@
                     this.$emit('createLogin', { id: response.data[0].id, login: this.form.login })
                     localStorage.id = JSON.stringify(response.data[0].id)
                     localStorage.login = JSON.stringify(this.form.login)
-                    this.$router.push({ name: 'accueil' })
+                    this.$router.push({ name: 'playlist' })
                 } else {
                     alert(response.data.error)
                 }})

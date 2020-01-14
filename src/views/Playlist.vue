@@ -1,8 +1,9 @@
 <template>
     <div>
-        <b-table striped hover :items="playlists" :fields="['name', 'idPlaylist']" @row-clicked="updateId">
+        <b-button variant="primary" to="/addplaylist" style="margin-top: 5px; margin-bottom: 15px">Ajouter une playlist</b-button>
+        <b-table striped hover :items="playlists" :fields="['name', { key: 'idPlaylist', label: '' }]" @row-clicked="updateId">
             <template v-slot:cell(idPlaylist)="data">
-                <b-button variant="primary" class="glyphicon glyphicon-add" v-on:click="deletePlaylist(data.item.idPlaylist)">Delete</b-button>
+                <b-button variant="danger" class="glyphicon glyphicon-add" v-on:click="deletePlaylist(data.item.idPlaylist)">Delete</b-button>
             </template>
         </b-table>
     </div>

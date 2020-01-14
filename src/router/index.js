@@ -1,12 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Connexion from "../views/Connexion"
-import Accueil from "../views/Accueil"
 import Inscription from "../views/Inscription"
 import Playlist from "../views/Playlist"
 import Video from "../views/Video"
 import UpdatePlaylist from "../views/UpdatePlaylist";
 import AjoutVideo from "../views/AjoutVideo";
+import AddPlaylist from "../views/AddPlaylist";
 
 
 Vue.use(VueRouter)
@@ -16,11 +16,6 @@ const routes = [
     path: '/',
     name: 'connexion',
     component: Connexion
-  },
-  {
-    path: '/accueil',
-    name: 'accueil',
-    component: Accueil
   },
   {
     path: '/inscription',
@@ -46,6 +41,11 @@ const routes = [
     path: '/addvideo',
     name: 'addvideo',
     component: AjoutVideo
+  },
+  {
+    path: '/addplaylist',
+    name: 'addplaylist',
+    component: AddPlaylist
   }
 
 ]

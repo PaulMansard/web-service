@@ -21,14 +21,12 @@
             }
         },
         methods: {
-            onSubmit(evt) {
-                evt.preventDefault()
+            onSubmit() {
                 var id = this.url.split('https://www.youtube.com/watch?v=')
-                Axios.post(this.$apiVideo + '/' + id[1]).then(response => { if ( response.data.error === undefined) {
-                    this.$router.push({ name: 'video' })
-                } else {
+                Axios.post(this.$apiVideo + '/' + id[1]).then(response => { if ( response.data.error !== undefined) {
                     alert(response.data.error)
                 }})
+                this.$router.push({ name: 'video' })
 
             }
         }
