@@ -44,8 +44,10 @@
                     name: this.namePlaylist,
                     videos: this.idVideos,
                     idUser: JSON.parse(localStorage.getItem('id'))
+                }).then(()=> {
+                    this.$router.push({ name: 'playlist' });
                 })
-                this.$router.push({ name: 'playlist' });
+
             }
         }
 
