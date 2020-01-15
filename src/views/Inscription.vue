@@ -36,7 +36,7 @@
                     pwd: this.form.password,
                     mail: this.form.email
                 }).then(response => { if ( response.data.error === undefined) {
-                    this.$router.push('/')
+                    this.$router.push({ name: 'connexion' });
                 } else {
                     alert(response.data.error)
                 }})

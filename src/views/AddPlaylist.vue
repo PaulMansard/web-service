@@ -36,7 +36,7 @@
         },
         methods: {
             addVideo(idVideo, event){
-                event.target.style.visibility = 'hidden'
+                event.target.disabled = true
                 this.idVideos += idVideo + '/'
             },
             onSubmit(){
