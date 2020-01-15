@@ -28,8 +28,9 @@
                 this.$router.push({ name: 'update', params: { playlist: playlist } });
             },
             deletePlaylist(idPlaylist) {
-                Axios.delete(this.$apiPlaylist + '/' + idPlaylist)
-                Axios.get(this.$apiPlaylist + '/user/' + this.idUser).then(response => { this.playlists = response.data })
+                Axios.delete(this.$apiPlaylist + '/' + idPlaylist).then(()=> {
+                    Axios.get(this.$apiPlaylist + '/user/' + this.idUser).then(response => { this.playlists = response.data })
+                })
             }
         }
     }

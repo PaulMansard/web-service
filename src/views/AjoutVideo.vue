@@ -23,10 +23,11 @@
         methods: {
             onSubmit() {
                 var id = this.url.split('https://www.youtube.com/watch?v=')
-                Axios.post(this.$apiVideo + '/' + id[1]).then(response => { if ( response.data.error !== undefined) {
+                Axios.post(this.$apiVideo + '/' + id[1]).then(response => {
+                    this.$router.push({ name: 'video' })
+                    if ( response.data.error !== undefined) {
                     alert(response.data.error)
                 }})
-                this.$router.push({ name: 'video' })
 
             }
         }
